@@ -27,6 +27,9 @@ namespace Weather_Project
         {
             using (WebClient web = new WebClient())
             {
+                Image MyImage = Image.FromFile(@"C:\Users\marti\source\repos\Weather Project\Weather Project\icons\refresh.png");
+                this.button1.Image = (Image)(new Bitmap(MyImage, new Size(58, 58)));
+
                 var json = web.DownloadString(string.Format("http://api.openweathermap.org/data/2.5/weather?q={0}&appid={1}&units=metric&ctn=6", city, id));
 
                 var result = JsonConvert.DeserializeObject<WeatherGet.root>(json);
@@ -68,6 +71,12 @@ namespace Weather_Project
         private void Form1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            getWeather(cityName, APPID);
+            Console.WriteLine("Loading...");
         }
     }
 }
