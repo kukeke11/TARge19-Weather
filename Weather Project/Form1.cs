@@ -16,19 +16,19 @@ namespace Weather_Project
     {
         const string APPID = "3789c4e4e5b2d1a4633f2f89ef213e23";
         string cityName = "Tallinn";
+        Image MyImage = Image.FromFile(@"C:\Users\marti\source\repos\Weather Project\Weather Project\icons\refresh.png");
 
         public Form1()
         {
             InitializeComponent();
             getWeather(cityName, APPID);
+            this.button1.Image = (Image)(new Bitmap(MyImage, new Size(58, 58)));
         }
 
         void getWeather(string city, string id)
         {
             using (WebClient web = new WebClient())
             {
-                Image MyImage = Image.FromFile(@"C:\Users\marti\source\repos\Weather Project\Weather Project\icons\refresh.png");
-                this.button1.Image = (Image)(new Bitmap(MyImage, new Size(58, 58)));
 
                 var json = web.DownloadString(string.Format("http://api.openweathermap.org/data/2.5/weather?q={0}&appid={1}&units=metric&ctn=6", city, id));
 
@@ -76,7 +76,7 @@ namespace Weather_Project
         private void Button1_Click(object sender, EventArgs e)
         {
             getWeather(cityName, APPID);
-            Console.WriteLine("Loading...");
+            
         }
     }
 }

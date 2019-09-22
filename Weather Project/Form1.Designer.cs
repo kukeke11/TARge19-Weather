@@ -182,6 +182,7 @@
             // button1
             // 
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.button1.Location = new System.Drawing.Point(629, 72);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(58, 58);
