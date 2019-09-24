@@ -43,9 +43,10 @@ namespace Weather_Project
                 lbl_humidity.Text = string.Format("{0}"+"%", output.main.humidity);
                 lbl_wind.Text = string.Format("{0}"+"m/s", output.wind.speed);
                 string ID = string.Format(output.weather[0].icon);
-                string imgpath =@"C:\Users\marti\source\repos\Weather Project\Weather Project\icons\";
+                string imgpath =@"..\..\..\Weather Project\icons\";
                 string end = ".png";
                 pictureBox2.Image = Image.FromFile(imgpath+ID+end);
+                
             }
         }
         private void Label1_Click(object sender, EventArgs e)
