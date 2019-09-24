@@ -16,7 +16,7 @@ namespace Weather_Project
     {
         const string APPID = "3789c4e4e5b2d1a4633f2f89ef213e23";
         string cityName = "Tallinn";
-        Image MyImage = Image.FromFile(@"C:\Users\marti\source\repos\Weather Project\Weather Project\icons\refresh.png");
+        Image MyImage = Image.FromFile(@"..\..\..\Weather Project\icons\refresh.png");
 
         public Form1()
         {
